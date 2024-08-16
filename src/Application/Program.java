@@ -1,7 +1,6 @@
 package Application;
 
-import BoardGame.Board;
-import BoardGame.Position;
+
 import Chess.ChessMatch;
 
 public class Program {
