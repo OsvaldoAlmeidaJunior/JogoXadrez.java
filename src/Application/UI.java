@@ -3,7 +3,6 @@ package Application;
 import Chess.ChessPiece;
 import Chess.ChessPosition;
 import Chess.Color;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -27,8 +26,14 @@ public class UI {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
-   public static void clearScren() {
-       //System.out.print("\033[H\033[2J");
+
+    public static void clearScren() {
+//        try {
+//            Runtime.exec("cls");
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+        //System.out.print("\033[H\033[2J");
        //System.out.flush(); não  funciona no terminal da IDE
        for (int i = 0; i < 50; ++i) System.out.println();
    }
