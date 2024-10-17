@@ -5,6 +5,7 @@ import Chess.ChessPiece;
 import Chess.ChessPosition;
 import Chess.Color;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -60,6 +61,9 @@ public class UI {
         System.out.println();
         System.out.println("turno :" + chessMatch.getTurn());
         System.out.println("Esperando jogada do jogador : " + chessMatch.getCurrentPlayer());
+        if(chessMatch.getCheck()){
+            System.out.println("CHECK!");
+        }
 
     }
 

@@ -52,7 +52,7 @@ public class Rook extends ChessPiece {
 
         }
 
-        //abaixo
+        //a baixo
         p.setValues(position.getRow() +1, position.getColumn());
         while (getBoard().positionExists(p) && !getBoard().therIsAPiece(p)){
             mat[p.getRow()][p.getColumn()] = true;
