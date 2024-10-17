@@ -34,13 +34,13 @@ public class UI {
 
 
     public static void clearScren() {
-//        try {
-//            Runtime.exec("cls");
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-        //System.out.print("\033[H\033[2J");
-       //System.out.flush(); não  funciona no terminal da IDE
+/*        try {
+            Runtime.exec("cls");
+        } catch (IOException e) {
+           throw new RuntimeException(e);
+        }
+        System.out.print("\033[H\033[2J");
+       System.out.flush(); não  funciona no terminal da IDE */
        for (int i = 0; i < 50; ++i) System.out.println();
    }
     public static ChessPosition readChessPosition (Scanner sc){
@@ -60,11 +60,16 @@ public class UI {
         printCapturedPieces(captured);
         System.out.println();
         System.out.println("turno :" + chessMatch.getTurn());
-        System.out.println("Esperando jogada do jogador : " + chessMatch.getCurrentPlayer());
-        if(chessMatch.getCheck()){
-            System.out.println("CHECK!");
+        if(!chessMatch.getcheckMate()) {
+            System.out.println("Esperando jogada do jogador : " + chessMatch.getCurrentPlayer());
+            if (chessMatch.getCheck()) {
+                System.out.println("CHECK!");
+            }
         }
-
+        else{
+            System.out.println("CHECKMATE!");
+            System.out.println("VENCEDOR: " +chessMatch.getCurrentPlayer());
+        }
     }
 
     public static void printBoard(ChessPiece[][] pieces){
